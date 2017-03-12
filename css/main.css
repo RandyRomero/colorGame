@@ -4,6 +4,10 @@ html, body {
 	height: 100%;
 }
 
+body {
+	background-color: black;
+}
+
 .container {
 	margin: 0 auto;
 	width: 50%;
@@ -11,7 +15,7 @@ html, body {
 
 header {
 	background-color: orange;
-	height: 25%;
+	/*height: 25%;*/
 	text-align: center;
 }
 
@@ -23,24 +27,37 @@ header h2 {
 }
 
 header h1 {
-	font-size: 4vw;
+	font-size: 80px;
 }
 
 header h2 {
-	font-size: 2vw;
+	font-size: 40px;
 }
 
 header h2:first-of-type {
-	margin-top: 0;
 	padding-top: 2%;
 }
 
+header h2:nth-of-type(2) {
+	padding-bottom: 2%;
+}
+
 nav {
+	background-color: white;
 	height: 5%;
 }
 
 main {
 	background-color: black;
-	height: 70%;
+	/*height: 70%;*/
 }
 
+@media(max-width: 800px) {
+	header h1 {
+		font-size: 10vw;
+	}
+
+	header h2 {
+		font-size: 5vw;
+	}
+}
