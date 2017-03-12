@@ -16,7 +16,7 @@ body {
 
 .container {
 	margin: 0 auto;
-	width: 50%;
+	width: 35%;
 }
 
 /******************************** HEADER *********************************/
@@ -53,22 +53,31 @@ header h2:nth-of-type(2) {
 
 nav {
 	background-color: white;
-	height: 5%;
+	/*height: 5%;*/
 	text-align: center;
 }
 
-nav .container button:first-of-type {
+nav p, nav button {
+	margin: 0;
+	padding-bottom: 10px;
+	padding-top: 10px;
+
+}
+
+nav button:first-of-type {
 	float: left;
 }
 
-nav .container p {
+nav p {
 	display: inline-block;
 }
 
-nav .container button:nth-of-type(2),
-nav .container button:nth-of-type(3) {
+nav button:nth-of-type(2),
+nav button:nth-of-type(3) {
 	float: right;
 }
+
+
 
 /******************************** MAIN *********************************/
 
