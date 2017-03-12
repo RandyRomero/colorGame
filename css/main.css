@@ -1,0 +1,25 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.container {
+	margin: 0 auto;
+	width: 50%;
+}
+
+header {
+	background-color: orange;
+	height: 25%;
+}
+
+nav {
+	height: 5%;
+}
+
+main {
+	background-color: black;
+	height: 70%;
+}
+
