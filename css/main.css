@@ -64,6 +64,27 @@ nav p, nav button {
 
 }
 
+nav button {
+	background-color: white;
+	border: none;
+	color: orange;
+	font-weight: 900;
+	text-transform: uppercase;
+	-webkit-transition: background-color 1s, color 1s;
+	transition: background-color .7s, color .7s;
+}
+
+nav button:hover {
+	background-color: orange;
+	color: white;
+}	
+
+nav button:focus {
+	background-color: orange;
+	color: white;
+	outline: none;
+}
+
 nav button:first-of-type {
 	float: left;
 }
