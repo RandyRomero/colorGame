@@ -8,6 +8,12 @@ body {
 	background-color: black;
 }
 
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .container {
 	margin: 0 auto;
 	width: 50%;
@@ -48,6 +54,20 @@ header h2:nth-of-type(2) {
 nav {
 	background-color: white;
 	height: 5%;
+	text-align: center;
+}
+
+nav .container button:first-of-type {
+	float: left;
+}
+
+nav .container p {
+	display: inline-block;
+}
+
+nav .container button:nth-of-type(2),
+nav .container button:nth-of-type(3) {
+	float: right;
 }
 
 /******************************** MAIN *********************************/
