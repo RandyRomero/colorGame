@@ -107,28 +107,25 @@ main {
 
 /**************************** MEDIA QUERIES *****************************/
 
-@media(max-width: 750px) {
+@media(max-width: 750px) and (orientation: portrait) {
+	/* there is enougn width for heading in px untill less than 750px where it starts to decrease with width of vieport */
+
 	header h1 {
 		font-size: 10.5vw;
 	}
 
-}
-
-/*@media(max-width: 800px) and (orientation: portrait){
-	header h1 {
-		font-size: 10vw;
-	}
-
 	header h2 {
-		font-size: 5vw;
+		font-size: 5.3vw;
 	}
 }
 
-@media(max-width: 1600px) and (orientation: landscape) {
+@media(orientation: landscape) {
+	/* as it was proved by experience it's better to make font-size depends on vieport height in landscape mode regardless of width*/
 	header h1 {
-		font-size: 6.2vw;
+		font-size: 10vh;
 	}
+
 	header h2 {
-		font-size: 3.1vw;
+		font-size: 4.8vh;
 	}
-}*/
+}
