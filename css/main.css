@@ -1,3 +1,7 @@
+html {
+	font-size: 16px;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -23,6 +27,7 @@ body {
 
 header {
 	background-color: orange;
+	height: 20%;
 	text-align: center;
 }
 
@@ -34,19 +39,19 @@ header h2 {
 }
 
 header h1 {
-	font-size: 80px;
+	font-size: 4rem;
 }
 
 header h2 {
-	font-size: 40px;
+	font-size: 2rem;
 }
 
 header h2:first-of-type {
-	padding-top: 2%;
+	padding-top: 1%;
 }
 
 header h2:nth-of-type(2) {
-	padding-bottom: 2%;
+	padding-bottom: 1%;
 }
 
 /******************************** NAV *********************************/
@@ -109,31 +114,9 @@ footer {
 
 footer p {
 	color: orange;
-	font-size: calc(2vw + 4vh);
+	font-size: 
 	text-transform: uppercase;
 }
 
 /**************************** MEDIA QUERIES *****************************/
 
-@media(max-width: 750px) and (orientation: portrait) {
-	/* there is enougn width for heading in px untill less than 750px where it starts to decrease with width of vieport */
-
-	header h1 {
-		font-size: 10.5vw;
-	}
-
-	header h2 {
-		font-size: 5.3vw;
-	}
-}
-
-@media(orientation: landscape) {
-	/* as it was proved by experience it's better to make font-size depends on vieport height in landscape mode regardless of width*/
-	header h1 {
-		font-size: 10vh;
-	}
-
-	header h2 {
-		font-size: 4.8vh;
-	}
-}
