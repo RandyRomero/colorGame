@@ -119,20 +119,29 @@ footer p {
 	h2:first-of-type { padding-top: 1.5%; }
 }
 
+@media(orientation: portrait) {
+	h2:first-of-type {padding-top: 5%;}
+}
+
 @media(min-width: 1921px), (min-height: 1200px) {
 	html {font-size: 0.83vmax;} /* fix it please */
 }
 
 @media(max-width: 1150px), (max-height: 850px) {
-	html {font-size: 12px;}
+	html {font-size: 13px;}
 }
 
-@media(max-width: 450px), (max-height: 600px) {
+@media(max-width: 450px) and (orientation: portrait), (max-height: 600px) and (orientation: portrait) {
+	html {font-size: 10px;}
+	/*h2:first-of-type { padding-top: 3%; }*/
+}
+
+@media(max-width: 450px) and (orientation: landscape), (max-height: 600px) and (orientation: landscape) {
 	html {font-size: 8px;}
 	/*h2:first-of-type { padding-top: 3%; }*/
 }
 
-@media(max-width: 300px), (max-height: 400px) {
+@media(max-width: 359px), (max-height: 559px) {
 	html {font-size: 6px;}
 }
 
