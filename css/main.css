@@ -114,7 +114,18 @@ nav button:nth-of-type(3) {
 
 /******************************** MAIN *********************************/
 
-main {
+main .container {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	margin-top: 3rem;
+}
+
+.square {
+	background-color: orange;
+	border-radius: 10%;
+	height: 12rem;
+	width: 12rem;
 }
 
 /******************************** FOOTER *********************************/
