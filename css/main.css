@@ -20,7 +20,7 @@ body {
 
 .container {
 	margin: 0 auto;
-	width: 35%;
+	width: 672px; /* as long as h1 heading */
 }
 
 /******************************** HEADER *********************************/
@@ -137,6 +137,7 @@ footer p {
 /**************************** MEDIA QUERIES *****************************/
 @media(max-width: 765px) {
 	html { font-size: 14px; }
+	.container { width: 65%; }
 }
 
 @media(max-width: 669px) {
