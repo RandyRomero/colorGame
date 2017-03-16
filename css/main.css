@@ -31,6 +31,27 @@ header {
 	text-align: center;
 }
 
+/*** BEGIN: css for centering container with headings vertically and horizontally ****/
+
+header {
+	display: table;
+	/*position: absolute;*/
+	width: 100%;
+}
+
+.middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.inner {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+}
+
+/*** END ***/
+
 h1,
 h2 {
 	color: white;
@@ -46,7 +67,7 @@ h2 {
 	font-size: 2rem;
 }
 
-h2:first-of-type { padding-top: 1.5%; }
+/*h2:first-of-type { padding-top: 1.5%; }*/
 
 /******************************** NAV *********************************/
 
@@ -115,14 +136,6 @@ footer p {
 
 /**************************** MEDIA QUERIES *****************************/
 
-@media(orientation: landscape) { /* gap between top edge of viewport and heading for all landscape */
-	h2:first-of-type { padding-top: 1.5%; }
-}
-
-@media(orientation: portrait) {
-	h2:first-of-type {padding-top: 5%;}
-}
-
 @media(min-width: 1921px), (min-height: 1200px) {
 	html {font-size: 0.83vmax;} /* fix it please */
 }
@@ -133,12 +146,10 @@ footer p {
 
 @media(max-width: 450px) and (orientation: portrait), (max-height: 600px) and (orientation: portrait) {
 	html {font-size: 10px;}
-	/*h2:first-of-type { padding-top: 3%; }*/
 }
 
 @media(max-width: 450px) and (orientation: landscape), (max-height: 600px) and (orientation: landscape) {
 	html {font-size: 8px;}
-	/*h2:first-of-type { padding-top: 3%; }*/
 }
 
 @media(max-width: 359px), (max-height: 559px) {
