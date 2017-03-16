@@ -135,27 +135,21 @@ footer p {
 }
 
 /**************************** MEDIA QUERIES *****************************/
-
-@media(min-width: 1921px), (min-height: 1200px) {
-	html {font-size: 0.83vmax;} /* fix it please */
+@media(max-width: 650px) {
+	html { font-size: 14px; }
 }
 
-@media(max-width: 1150px), (max-height: 850px) {
-	html {font-size: 13px;}
+@media(max-width: 550px) {
+	html {font-size: 11px;}
 }
 
-@media(max-width: 450px) and (orientation: portrait), (max-height: 600px) and (orientation: portrait) {
+@media(max-width: 440px) {
 	html {font-size: 10px;}
+	h2 {font-size: 2.5rem;}
 }
 
-@media(max-width: 450px) and (orientation: landscape), (max-height: 600px) and (orientation: landscape) {
-	html {font-size: 8px;}
-}
 
-@media(max-width: 359px), (max-height: 559px) {
-	html {font-size: 6px;}
-}
 
-@media(max-width: 215px), (max-height: 310px) {
-	html { font-size: 3.5vw;}
-}
+/*@media(max-width: 310px) {
+	html {font-size: 5px;}
+}*/
