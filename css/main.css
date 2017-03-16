@@ -58,6 +58,7 @@ nav {
 
 nav button {
 	margin: 0;
+	font-size: 1rem;
 	padding-bottom: 10px;
 	padding-top: 10px;
 
@@ -114,27 +115,27 @@ footer p {
 
 /**************************** MEDIA QUERIES *****************************/
 
+@media(orientation: landscape) { /* gap between top edge of viewport and heading for all landscape */
+	h2:first-of-type { padding-top: 1.5%; }
+}
+
 @media(min-width: 1921px), (min-height: 1200px) {
 	html {font-size: 0.83vmax;} /* fix it please */
 }
 
 @media(max-width: 1150px), (max-height: 850px) {
-	h1 { font-size: 3rem; }
-	h2 { font-size: 1.5rem; }
-	h2:first-of-type { padding-top: 2%; }
+	html {font-size: 12px;}
 }
 
 @media(max-width: 450px), (max-height: 600px) {
-	h1 {font-size: 2rem;}
-	h2 {font-size: 1rem;}
-	h2:first-of-type { padding-top: 3%; }
+	html {font-size: 8px;}
+	/*h2:first-of-type { padding-top: 3%; }*/
 }
 
 @media(max-width: 300px), (max-height: 400px) {
-	h1 {font-size: 1.5rem;}
-	h2 {font-size: 0.75rem;}
+	html {font-size: 6px;}
 }
 
 @media(max-width: 215px), (max-height: 310px) {
-	html { font-size: 7.4vw;}
+	html { font-size: 3.5vw;}
 }
