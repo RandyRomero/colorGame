@@ -124,8 +124,9 @@ main .container {
 .square {
 	background-color: orange;
 	border-radius: 10%;
-	height: 12rem;
-	width: 12rem;
+	height: 11rem;
+	margin: 0.4rem;
+	width: 11rem;
 }
 
 /******************************** FOOTER *********************************/
