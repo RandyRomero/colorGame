@@ -116,6 +116,7 @@ main .container {
 .square {
 	background-color: orange;
 	border-radius: 10%;
+	flex-shrink: 0;
 	height: 11rem;
 	margin: 0.4rem;
 	width: 11rem;
