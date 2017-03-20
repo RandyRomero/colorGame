@@ -107,9 +107,9 @@ nav button:focus {
 	float: left;
 }
 
-#right-nav-btns {
-	float: right;
-}
+
+#left-nav-div { float: left; }
+#right-nav-div { float: right; }
 
 
 /******************************** MAIN *********************************/
@@ -157,6 +157,19 @@ footer p {
 
 @media(max-width: 387px) {
 	html { font-size: 6px; }
+}
+
+@media(orientation: portrait) {
+	#left-nav-btn {
+		width: 50%;
+	}
+
+	#right-nav-div button {
+		display: block;
+		float: none;
+		width: 100%;
+		padding: 0.8rem 0;
+	}
 }
 
 /*@media(orientation: portrait) {
