@@ -73,7 +73,6 @@ h2 {
 
 nav {
 	background-color: white;
-	/*height: 5%;*/
 	text-align: center;
 }
 
@@ -160,10 +159,24 @@ footer p {
 }
 
 @media(orientation: portrait) {
-	#left-nav-btn {
+	nav .container { width: 100%; }
+
+	#left-nav-div { 
+		text-align: center;
 		width: 50%;
 	}
 
+	#btn-1 {
+		display: block;
+		float: none;
+		font-size: 3.8rem;
+		width: 100%;
+		white-space: nowrap;
+		padding: 0.8rem 0;
+	}
+
+	#right-nav-div { width: 50%; }
+	
 	#right-nav-div button {
 		display: block;
 		float: none;
