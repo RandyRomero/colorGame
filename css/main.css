@@ -116,7 +116,7 @@ main .container {
 .square {
 	background-color: orange;
 	border-radius: 10%;
-	flex-shrink: 0;
+	flex-shrink: 0; /* because it's 1 by default */
 	height: 11rem;
 	margin: 0.4rem;
 	width: 11rem;
@@ -164,6 +164,12 @@ footer p {
 		width: 100%;
 		white-space: nowrap;
 		padding: 0.8rem 0;
+	}
+
+	.square {
+		/* magnify squares for mobile-portrait */
+		height: 14rem;
+		width: 14rem;
 	}
 	
 }
