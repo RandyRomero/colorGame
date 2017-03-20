@@ -84,7 +84,7 @@ nav button {
 	font-size: 1.3rem;
 	font-weight: 900;
 	margin: 0;
-	padding: 0.7rem;
+	padding: 0.8rem;
 	text-transform: uppercase;
 	-webkit-transition: background-color 1s, color 1s;
 	transition: background-color .7s, color .7s;
@@ -101,15 +101,15 @@ nav button:focus {
 	outline: none;
 }
 
-nav button:first-of-type {
+#btn-1,
+#btn-2,
+#btn-3 {
 	float: left;
 }
 
-nav button:nth-of-type(2),
-nav button:nth-of-type(3) {
+#right-nav-btns {
 	float: right;
 }
-
 
 
 /******************************** MAIN *********************************/
@@ -159,6 +159,26 @@ footer p {
 	html { font-size: 6px; }
 }
 
+/*@media(orientation: portrait) {
+	nav .container { width: 100%; }
+
+	#btn-1,
+	#btn-2,
+	#btn-3 {
+		display: block;
+		float: none;
+		padding: 1rem 0;
+		margin: 0 auto;
+		width: 100%;
+		white-space: nowrap;
+	}
+}*/
+
+/*@media(orientation: portrait) {
+	main .container {
+		width: 90%;
+	}
+} */
 
 /*@media(max-width: 310px) {
 	html {font-size: 5px;}
