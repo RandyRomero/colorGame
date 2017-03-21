@@ -6,10 +6,10 @@ var restart = document.querySelector('#btn-1'); /* new colors */
 var mode = document.querySelector('#btn-2'); /* easy or hard more */
 var easyMode = true;
 
-/* get three random number from 1 to 255 */
+/* get three random number from 0 to 255 */
 var rgbNums = [];
-for(var i = 0; i <=2; i++) {
-	rgbNums[i] = Math.floor(Math.random() * (255 - 0 + 1) + 0);
+for(var i = 0; i <= 2; i++) {
+	rgbNums[i] = Math.floor(Math.random() * 256);
 	console.log(rgbNums[i])
 }
 
