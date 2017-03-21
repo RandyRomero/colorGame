@@ -6,6 +6,13 @@ var restart = document.querySelector('#btn-1'); /* new colors */
 var mode = document.querySelector('#btn-2'); /* easy or hard more */
 easyMode = true;
 
+/* define variables for rgb numbers in header */
+var rgbNum = [];
+for(var i = 1; i <= 3; i++) {
+	rgbNum[i] = document.querySelector('header h1 span:nth-of-type(' + 
+		i + ')');
+}
+
 /* define variables for squares */
 var sqrList =[];
 for(var i = 1; i <= 6; i++) {
