@@ -112,7 +112,7 @@ main .container:first-of-type {
 
 main .container:first-of-type P {
 	color: orange;
-	font-size: 4rem;
+	font-size: 3rem;
 	margin-bottom: 0.1rem;
 	margin-top: 0.1rem;
 	text-transform: uppercase;
