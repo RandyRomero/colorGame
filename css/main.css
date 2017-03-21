@@ -104,18 +104,28 @@ nav button:focus {
 #right-nav-div { float: right; }
 
 
-/******************************** MAIN *********************************/
+/*************************** USER MESSAGE *******************************/
 
-main .container:first-of-type {
+#userMessage {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
 	text-align: center;
+	height: 5rem;
 }
 
-main .container:first-of-type P {
+#userMessage p {
 	color: orange;
 	font-size: 3rem;
 	margin-bottom: 0.1rem;
 	margin-top: 0.1rem;
 	text-transform: uppercase;
+}
+
+/******************************** MAIN *********************************/
+
+main .container:first-of-type {
+	text-align: center;
 }
 
 
@@ -172,8 +182,7 @@ main .container {
 		/* magnify squares for mobile-portrait */
 		height: 14rem;
 		width: 14rem;
-	}
-	
+	}	
 }
 
 
