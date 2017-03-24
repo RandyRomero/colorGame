@@ -18,7 +18,6 @@ for(var i = 1; i <= 3; i++) {
 var sqrList =[];
 for(var i = 0; i <= 5; i++) {
 	sqrList[i] = document.querySelector('#sqr-' + (i + 1));
-	// console.log(sqrList.length
 }
 
 /* change 'easy' button to 'hard' and back */
@@ -44,25 +43,27 @@ function getRandomColor() {
 }
 
 /* paints all squares in different colors */
-function paintSquares(sqrList) {
+function paintSquares(sqrList, randomSquareNum, rightColor) {
 	for(var i = 0; i < sqrList.length; i++) {
 		randomColor = getRandomColor();
 		stringColor = 'rgb(' + randomColor[0] + ', ' + randomColor[1] + ', ' + randomColor[2] + ')'
 		sqrList[i].style.backgroundColor = stringColor;
+		sqrList[randomSquareNum].style.background = rightColor;
 	}
 }
 
-/* returns default look to program */
+/* set new colors for squares */
 restart.addEventListener('click', function() {
 	userMessage.style.display = 'none'; /* make it vanish */ 
 	header.style.backgroundColor = 'orange';
-	paintSquares(sqrList);
 	rightColor = getRandomColor();
-	
 	/* put rbg notation of rgb color in header */
 	for(var i = 1; i <= 3; i++) { 
 		rgbNumHeader[i].textContent = rightColor[i - 1];
 	};
+	randomSquareNum = Math.floor(Math.random() * 5);
+	console.log(randomSquareNum) 
+	paintSquares(sqrList, randomSquareNum, rightColor);
 
 });
 
