@@ -195,12 +195,26 @@ main .container:nth-of-type(2) {
 
 /******** MEDIA QUERIES FOR LANDSCAPE **********/
 
-@media(max-width: 1000px) and (orientation: landscape) {
+@media(max-height: 650px) and (orientation: landscape) {
 	html {
-		font-size: 14px;
+		font-size: 13px;
+	}
+
+	.container {
+		width: 55%;
+	}
+
+	main .container {
+		justify-content: space-between;
 	}
 }
 
+
+@media(max-height: 600px) and (orientation: landscape) {
+	html {
+		font-size: 10px;
+	}
+}
 /*@media(orientation: portrait) {
 	nav .container { width: 100%; }
 
