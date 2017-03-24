@@ -32,8 +32,7 @@ mode.addEventListener('click', function() {
 	}
 });
 
-/* get three random number from 0 to 255
-   return string for example: rgb(234, 54, 56) */
+/* get three random number from 0 to 255 */
 function getRandomColor() {
 	var rgbNums = [];
 	for(var i = 0; i <= 2; i++) {
@@ -60,7 +59,8 @@ restart.addEventListener('click', function() {
 	paintSquares(sqrList);
 	rightColor = getRandomColor();
 	
-	for(var i = 1; i <= 3; i++) {
+	/* put rbg notation of rgb color in header */
+	for(var i = 1; i <= 3; i++) { 
 		rgbNumHeader[i].textContent = rightColor[i - 1];
 	};
 
