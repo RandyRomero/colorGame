@@ -58,6 +58,7 @@ function ifWin() {
 	userMessage.textContent = 'Correct!';
 	mode.style.color = rightColorString;
 	restart.style.color = rightColorString;
+	restart.textContent = 'Play Again?';
 
 	header.style.backgroundColor = rightColorString;
 	
@@ -67,7 +68,7 @@ function ifWin() {
 
 	/* stop show 'try again' when user has already given the right answer */
 	for(var i = 0; i < sqrList.length; i++) {
-		sqrList[i].removeEventListener('click', ifLoose)
+		sqrList[i].removeEventListener('click', ifLoose);
 	}
 
 }
@@ -84,6 +85,7 @@ restart.addEventListener('click', function() {
 	header.style.removeProperty('background-color');
 	mode.style.removeProperty('color');
 	restart.style.removeProperty('color');
+	restart.textContent = 'New Colors';
 
 	rightColor = getRandomColor();
 	rightColorString = 'rgb(' + rightColor[0] + ', ' + rightColor[1] + ', ' + rightColor[2] + ')';
