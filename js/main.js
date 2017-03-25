@@ -56,6 +56,8 @@ function ifWin() {
 	userMessage.style.display = 'block'; /* make it visible */
 	userMessage.style.color = rightColorString;
 	userMessage.textContent = 'Correct!';
+	mode.style.color = rightColorString;
+	restart.style.color = rightColorString;
 
 	header.style.backgroundColor = rightColorString;
 	for(var i = 0; i < sqrList.length; i++) {
@@ -66,7 +68,10 @@ function ifWin() {
 /* set new colors for squares */
 restart.addEventListener('click', function() {
 	userMessage.style.display = 'none'; /* make it vanish */ 
-	header.style.backgroundColor = 'orange';
+	header.style.removeProperty('background-color');
+	mode.style.removeProperty('color');
+	restart.style.removeProperty('color');
+
 	rightColor = getRandomColor();
 	rightColorString = 'rgb(' + rightColor[0] + ', ' + rightColor[1] + ', ' + rightColor[2] + ')';
 	// console.log(rightColorString)
