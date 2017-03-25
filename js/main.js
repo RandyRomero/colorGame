@@ -60,9 +60,16 @@ function ifWin() {
 	restart.style.color = rightColorString;
 
 	header.style.backgroundColor = rightColorString;
+	
 	for(var i = 0; i < sqrList.length; i++) {
 		sqrList[i].style.backgroundColor = rightColorString;
-	};		
+	};
+
+	/* stop show 'try again' when user has already given the right answer */
+	for(var i = 0; i < sqrList.length; i++) {
+		sqrList[i].removeEventListener('click', ifLoose)
+	}
+
 }
 
 function ifLoose(){
