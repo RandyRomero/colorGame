@@ -1,5 +1,5 @@
 var userMessage = document.querySelector('#userMessage p')
-var header = document.querySelector('header'); /* main header */
+var header = document.querySelector('header'); /* header */
 var restart = document.querySelector('#btn-1'); /* new colors */
 var mode = document.querySelector('#btn-2'); /* easy or hard more */
 var easyMode = true;
@@ -51,9 +51,13 @@ function paintSquares(sqrList, randomSquareNum, rightColor) {
 	sqrList[randomSquareNum].style.backgroundColor = rightColorString;
 }
 
-/* paint all squares to right color */
+/* paint all squares, header and user message to right color */
 function ifWin() {
+	userMessage.style.display = 'block'; /* make it visible */
+	userMessage.style.color = rightColorString;
 	userMessage.textContent = 'Correct!';
+
+	header.style.backgroundColor = rightColorString;
 	for(var i = 0; i < sqrList.length; i++) {
 		sqrList[i].style.backgroundColor = rightColorString;
 	};		
