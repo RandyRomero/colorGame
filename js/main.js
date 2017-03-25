@@ -1,5 +1,3 @@
-console.log('Connected!')
-
 var userMessage = document.querySelector('#userMessage p')
 var header = document.querySelector('header'); /* main header */
 var restart = document.querySelector('#btn-1'); /* new colors */
@@ -49,9 +47,16 @@ function paintSquares(sqrList, randomSquareNum, rightColor) {
 		stringColor = 'rgb(' + randomColor[0] + ', ' + randomColor[1] + ', ' + randomColor[2] + ')'
 		sqrList[i].style.backgroundColor = stringColor;
 	}
-	console.log(rightColorString)
+	// console.log(rightColorString)
 	sqrList[randomSquareNum].style.backgroundColor = rightColorString;
-	
+}
+
+/* paint all squares to right color */
+function ifWin() {
+	userMessage.textContent = 'Correct!';
+	for(var i = 0; i < sqrList.length; i++) {
+		sqrList[i].style.backgroundColor = rightColorString;
+	};		
 }
 
 /* set new colors for squares */
@@ -60,30 +65,23 @@ restart.addEventListener('click', function() {
 	header.style.backgroundColor = 'orange';
 	rightColor = getRandomColor();
 	rightColorString = 'rgb(' + rightColor[0] + ', ' + rightColor[1] + ', ' + rightColor[2] + ')';
-	console.log(rightColorString)
+	// console.log(rightColorString)
 
 	/* put rbg notation of rgb color in header */
 	for(var i = 1; i <= 3; i++) { 
 		rgbNumHeader[i].textContent = rightColor[i - 1];
 	};
 	randomSquareNum = Math.floor(Math.random() * 6);
-	console.log(randomSquareNum)
+	// console.log(randomSquareNum)
 
 	paintSquares(sqrList, randomSquareNum, rightColorString);
-	console.log(sqrList[randomSquareNum])
-
-	sqrList[randomSquareNum].addEventListener('click', function() {
-		userMessage.textContent = 'Correct!';
-		for(var i = 0; i < sqrList.length; i++) {
-			sqrList[i].style.backgroundColor = rightColorString;
-		}
-	});
 	
+	/* reset eventListener with ifWin function from all squares */
+	for(var i = 0; i < sqrList.length; i++) {
+		sqrList[i].removeEventListener('click', ifWin);
+	}
 
+	/* set eventListener only for one square with right color */
+	sqrList[randomSquareNum].addEventListener('click', ifWin);
+	console.log(sqrList[randomSquareNum])
 });
-
-// paintSquares(sqrList);
-
-// for(var i = 0; i < sqrList.length; i++) {
-// 	sqrList[i].style.backgroundColor = 'orange';
-// }
