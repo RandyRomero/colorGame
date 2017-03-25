@@ -65,6 +65,12 @@ function ifWin() {
 	};		
 }
 
+function ifLoose(){
+	userMessage.style.removeProperty('color');
+	userMessage.textContent = 'Try Again';
+	userMessage.style.display = 'block';
+}
+
 /* set new colors for squares */
 restart.addEventListener('click', function() {
 	userMessage.style.display = 'none'; /* make it vanish */ 
@@ -88,6 +94,14 @@ restart.addEventListener('click', function() {
 	/* reset eventListener with ifWin function from all squares */
 	for(var i = 0; i < sqrList.length; i++) {
 		sqrList[i].removeEventListener('click', ifWin);
+	}
+
+	/* set eventListener to show userMessage 'try again' if user makes mistake' */
+	for(var i = 0; i < sqrList.length; i++) {
+		if(i === randomSquareNum) {
+			continue
+		} 
+		sqrList[i].addEventListener('click', ifLoose)
 	}
 
 	/* set eventListener only for one square with right color */
