@@ -49,7 +49,9 @@ function paintSquares(sqrList, randomSquareNum, rightColor) {
 		stringColor = 'rgb(' + randomColor[0] + ', ' + randomColor[1] + ', ' + randomColor[2] + ')'
 		sqrList[i].style.backgroundColor = stringColor;
 	}
+	console.log(rightColorString)
 	sqrList[randomSquareNum].style.backgroundColor = rightColorString;
+	
 }
 
 /* set new colors for squares */
@@ -64,16 +66,19 @@ restart.addEventListener('click', function() {
 	for(var i = 1; i <= 3; i++) { 
 		rgbNumHeader[i].textContent = rightColor[i - 1];
 	};
-	randomSquareNum = Math.floor(Math.random() * 5);
+	randomSquareNum = Math.floor(Math.random() * 6);
+	console.log(randomSquareNum)
 
+	paintSquares(sqrList, randomSquareNum, rightColorString);
 	console.log(sqrList[randomSquareNum])
+
 	sqrList[randomSquareNum].addEventListener('click', function() {
 		userMessage.textContent = 'Correct!';
 		for(var i = 0; i < sqrList.length; i++) {
 			sqrList[i].style.backgroundColor = rightColorString;
 		}
 	});
-	paintSquares(sqrList, randomSquareNum, rightColorString);
+	
 
 });
 
