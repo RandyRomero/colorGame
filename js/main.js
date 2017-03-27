@@ -51,6 +51,14 @@ function paintSquares(sqrList, randomSquareNum, rightColor) {
 	sqrList[randomSquareNum].style.backgroundColor = rightColorString;
 }
 
+function ifLoose(){
+	userMessage.style.removeProperty('color');
+	userMessage.textContent = 'Try Again';
+	userMessage.style.display = 'block';
+	/* this is sqrList[i]; make  square which was clicked to disappear */
+	this.style.backgroundColor = 'transparent';
+}
+
 /* paint all squares, header and user message to right color */
 function ifWin() {
 	userMessage.style.display = 'block'; /* make it visible */
@@ -71,12 +79,6 @@ function ifWin() {
 		sqrList[i].removeEventListener('click', ifLoose);
 	}
 
-}
-
-function ifLoose(){
-	userMessage.style.removeProperty('color');
-	userMessage.textContent = 'Try Again';
-	userMessage.style.display = 'block';
 }
 
 /* set new colors for squares */
@@ -109,7 +111,7 @@ restart.addEventListener('click', function() {
 	for(var i = 0; i < sqrList.length; i++) {
 		if(i === randomSquareNum) {
 			continue
-		} 
+		}
 		sqrList[i].addEventListener('click', ifLoose)
 	}
 
