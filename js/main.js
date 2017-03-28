@@ -2,7 +2,7 @@ var userMessage = document.querySelector('#userMessage p')
 var header = document.querySelector('header'); /* header */
 var restart = document.querySelector('#btn-1'); /* new colors */
 var mode = document.querySelector('#btn-2'); /* easy or hard more */
-var easyMode = true;
+var hardMode = true;
 
 
 /* define variables for rgb numbers in header */
@@ -20,12 +20,12 @@ for(var i = 0; i <= 5; i++) {
 
 /* change 'easy' button to 'hard' and back */
 mode.addEventListener('click', function() {
-	if(easyMode === true) {
-		mode.textContent = 'hard';
-		easyMode = false;
-	} else {
+	if(hardMode === true) {
 		mode.textContent = 'easy';
-		easyMode = true;
+		hardMode = false;
+	} else {
+		mode.textContent = 'hard';
+		hardMode = true;
 	}
 });
 
