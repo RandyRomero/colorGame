@@ -22,15 +22,15 @@ for(var i = 0; i <= 5; i++) {
 /* change 'easy' button to 'hard' and back */
 mode.addEventListener('click', function() {
 	if(hardMode === true) {
-		restart();
 		mode.textContent = 'easy';
 		secondSqrRow.style.display = 'none';
 		hardMode = false;
-	} else {
 		restart();
+	} else {
 		mode.textContent = 'hard';
 		secondSqrRow.style.removeProperty('display');
 		hardMode = true;
+		restart();
 	}
 });
 
@@ -104,9 +104,11 @@ function restart() {
 
 	if(hardMode === true){
 		randomSquareNum = Math.floor(Math.random() * 6);
+		// console.log(randomSquareNum);
 	} else {
 		/* is it is easy mode right square should be among first three of them */
 		randomSquareNum = Math.floor(Math.random() * 3);
+		
 	}
 	
 	// console.log(randomSquareNum)
