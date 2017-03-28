@@ -2,6 +2,7 @@ var userMessage = document.querySelector('#userMessage p')
 var header = document.querySelector('header'); /* header */
 var restart = document.querySelector('#btn-1'); /* new colors */
 var mode = document.querySelector('#btn-2'); /* easy or hard more */
+var secondSqrRow = document.querySelector('main .container:nth-of-type(2)');
 var hardMode = true;
 
 
@@ -22,9 +23,11 @@ for(var i = 0; i <= 5; i++) {
 mode.addEventListener('click', function() {
 	if(hardMode === true) {
 		mode.textContent = 'easy';
+		secondSqrRow.style.display = 'none';
 		hardMode = false;
 	} else {
 		mode.textContent = 'hard';
+		secondSqrRow.style.removeProperty('display');
 		hardMode = true;
 	}
 });
