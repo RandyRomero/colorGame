@@ -1,6 +1,6 @@
 var userMessage = document.querySelector('#userMessage p')
 var header = document.querySelector('header'); /* header */
-var restart = document.querySelector('#btn-1'); /* new colors */
+var newGame = document.querySelector('#btn-1'); /* new colors */
 var mode = document.querySelector('#btn-2'); /* easy or hard more */
 var secondSqrRow = document.querySelector('main .container:nth-of-type(2)');
 var hardMode = true;
@@ -22,10 +22,12 @@ for(var i = 0; i <= 5; i++) {
 /* change 'easy' button to 'hard' and back */
 mode.addEventListener('click', function() {
 	if(hardMode === true) {
+		restart();
 		mode.textContent = 'easy';
 		secondSqrRow.style.display = 'none';
 		hardMode = false;
 	} else {
+		restart();
 		mode.textContent = 'hard';
 		secondSqrRow.style.removeProperty('display');
 		hardMode = true;
@@ -68,8 +70,8 @@ function ifWin() {
 	userMessage.style.color = rightColorString;
 	userMessage.textContent = 'Correct!';
 	mode.style.color = rightColorString;
-	restart.style.color = rightColorString;
-	restart.textContent = 'Play Again?';
+	newGame.style.color = rightColorString;
+	newGame.textContent = 'Play Again?';
 
 	header.style.backgroundColor = rightColorString;
 	
@@ -85,12 +87,12 @@ function ifWin() {
 }
 
 /* set new colors for squares */
-restart.addEventListener('click', function() {
+function restart() {
 	userMessage.style.display = 'none'; /* make it vanish */ 
 	header.style.removeProperty('background-color');
 	mode.style.removeProperty('color');
-	restart.style.removeProperty('color');
-	restart.textContent = 'New Colors';
+	newGame.style.removeProperty('color');
+	newGame.textContent = 'New Colors';
 
 	rightColor = getRandomColor();
 	rightColorString = 'rgb(' + rightColor[0] + ', ' + rightColor[1] + ', ' + rightColor[2] + ')';
@@ -120,5 +122,7 @@ restart.addEventListener('click', function() {
 
 	/* set eventListener only for one square with right color */
 	sqrList[randomSquareNum].addEventListener('click', ifWin);
-	console.log(sqrList[randomSquareNum])
-});
+	// console.log(sqrList[randomSquareNum])
+};
+
+newGame.addEventListener('click', restart)
