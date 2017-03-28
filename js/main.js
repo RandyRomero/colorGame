@@ -83,7 +83,6 @@ function ifWin() {
 	for(var i = 0; i < sqrList.length; i++) {
 		sqrList[i].removeEventListener('click', ifLoose);
 	}
-
 }
 
 /* set new colors for squares */
@@ -102,7 +101,14 @@ function restart() {
 	for(var i = 1; i <= 3; i++) { 
 		rgbNumHeader[i].textContent = rightColor[i - 1];
 	};
-	randomSquareNum = Math.floor(Math.random() * 6);
+
+	if(hardMode === true){
+		randomSquareNum = Math.floor(Math.random() * 6);
+	} else {
+		/* is it is easy mode right square should be among first three of them */
+		randomSquareNum = Math.floor(Math.random() * 3);
+	}
+	
 	// console.log(randomSquareNum)
 
 	paintSquares(sqrList, randomSquareNum, rightColorString);
