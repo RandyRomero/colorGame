@@ -117,7 +117,7 @@ nav button:focus {
 
 #userMessage p {
 	color: orange;
-	font-size: 3rem;
+	font-size: 1.5rem;
 	margin-bottom: 0.1rem;
 	margin-top: 0.1rem;
 	text-transform: uppercase;
@@ -128,7 +128,6 @@ nav button:focus {
 main .container:first-of-type {
 	text-align: center;
 }
-
 
 main .container {
 	display: flex;
@@ -185,6 +184,14 @@ main .container:nth-of-type(2) {
 		width: 100%;
 		white-space: nowrap;
 		padding: 0.8rem 0;
+	}
+
+	#userMessage {
+		height: 6rem;
+	}
+
+	#userMessage p {
+		font-size: 2.5rem;
 	}
 
 	.square {
