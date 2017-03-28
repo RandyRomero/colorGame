@@ -36,6 +36,7 @@ header {
 header {
 	display: table;
 	/*position: absolute;*/
+	transition: background-color .7s;
 	width: 100%;
 }
 
@@ -149,7 +150,7 @@ main .container:nth-of-type(2) {
 	flex-shrink: 0; /* because it's 1 by default */
 	height: 11rem;
 	margin: 0.4rem;
-	transition: background-color 1s;
+	transition: background-color .7s;
 	width: 11rem;
 }
 
