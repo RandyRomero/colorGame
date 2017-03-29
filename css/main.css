@@ -118,6 +118,7 @@ nav button:focus {
 #userMessage p {
 	color: orange;
 	font-size: 1.5rem;
+	font-weight: 900;
 	margin-bottom: 0.1rem;
 	margin-top: 0.1rem;
 	text-transform: uppercase;
@@ -207,19 +208,26 @@ main .container:nth-of-type(2) {
 @media(max-height: 730px) and (orientation: landscape) {
 	html { font-size: 13px; }
 	
-	.container { width: 55%; }
+	.container { width: 60%; }
 
 	main .container { justify-content: space-between; }
 }
 
 @media(max-height: 600px) and (orientation: landscape) {
 	html { font-size: 10px; }
+	.container { width: 60%; }
 }
 
 @media(max-height: 470px) and (orientation: landscape) {
 	html { font-size: 8px; }
 
 	.container { width: 44%; }
+}
+
+@media(max-height: 370px) and (orientation: landscape) {
+	html { font-size: 6px; }
+
+	.container { width: 32%; }
 }
 
 /*@media(orientation: portrait) {
