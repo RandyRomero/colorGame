@@ -77,6 +77,10 @@ nav {
 	text-align: center;
 }
 
+nav .container {
+	width: 38rem;
+}
+
 nav button {
 	background-color: white;
 	border: none;
@@ -134,6 +138,7 @@ main .container {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
+	width: 100%;
 }
 
 main .container:first-of-type {
@@ -157,7 +162,7 @@ main .container:nth-of-type(2) {
 /**************************** MEDIA QUERIES *****************************/
 @media(max-width: 765px) {
 	html { font-size: 14px; }
-	.container { width: 65%; }
+	/*.container { width: 65%; }*/
 }
 
 @media(max-width: 669px) {
@@ -174,10 +179,12 @@ main .container:nth-of-type(2) {
 }
 
 @media(orientation: portrait) { /* to align buttons in nav for portrait */
-	.container { width: 100%; }
+	/*.container { width: 100%; }*/
 
 	#left-nav-div { width: 60%; }
 	#right-nav-div { width: 40%; }	
+
+	nav .container {width: 100%;}
 
 	nav button {
 		display: block;
@@ -208,26 +215,26 @@ main .container:nth-of-type(2) {
 @media(max-height: 730px) and (orientation: landscape) {
 	html { font-size: 13px; }
 	
-	.container { width: 60%; }
+	/*.container { width: 60%; }*/
 
 	/*main .container { justify-content: space-between; }*/
 }
 
 @media(max-height: 600px) and (orientation: landscape) {
 	html { font-size: 10px; }
-	.container { width: 60%; }
+	/*.container { width: 60%; }*/
 }
 
 @media(max-height: 470px) and (orientation: landscape) {
 	html { font-size: 8px; }
 
-	.container { width: 44%; }
+	/*.container { width: 44%; }*/
 }
 
 @media(max-height: 370px) and (orientation: landscape) {
 	html { font-size: 6px; }
 
-	.container { width: 32%; }
+	/*.container { width: 32%; }*/
 }
 
 /*@media(orientation: portrait) {
