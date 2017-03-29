@@ -67,6 +67,9 @@ function ifLoose(){
 	userMessage.style.display = 'block';
 	/* this is sqrList[i]; make  square which was clicked to disappear */
 	this.style.backgroundColor = 'transparent';
+
+	score -= 2;
+	youScoreNum.textContent = score;
 }
 
 /* paint all squares, header and user message to right color */
@@ -88,6 +91,9 @@ function ifWin() {
 	for(var i = 0; i < sqrList.length; i++) {
 		sqrList[i].removeEventListener('click', ifLoose);
 	}
+	/* add score */
+	score += 6;
+	youScoreNum.textContent = score;
 }
 
 /* set new colors for squares */
