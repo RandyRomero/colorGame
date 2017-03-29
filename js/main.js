@@ -1,9 +1,12 @@
-var userMessage = document.querySelector('#userMessage p')
+var userMessage = document.querySelector('#userMessage p:first-of-type')
 var header = document.querySelector('header'); /* header */
 var newGame = document.querySelector('#btn-1'); /* new colors */
 var mode = document.querySelector('#btn-2'); /* easy or hard more */
 var secondSqrRow = document.querySelector('main .container:nth-of-type(2)');
 var hardMode = true;
+var youScoreString = document.querySelector('#userMessage p:nth-of-type(2)')
+var youScoreNum = document.querySelector('#userMessage p span')
+var score = 0;
 
 /* hite user message before it is needed */
 // userMessage.style.display = 'none'; 
