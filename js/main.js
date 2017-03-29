@@ -7,6 +7,7 @@ var hardMode = true;
 var youScoreString = document.querySelector('#userMessage p:nth-of-type(2)')
 var youScoreNum = document.querySelector('#userMessage p span')
 var score = 0;
+var win = false; /* it is needed to check whether user guessed or not previous colors. if not - set score to zero */ 
 
 /* hite user message before it is needed */
 // userMessage.style.display = 'none'; 
@@ -73,6 +74,7 @@ function ifLoose(){
 	this.style.backgroundColor = 'transparent';
 	score -= 2;
 	youScoreNum.textContent = score;
+	win = false;
 }
 
 /* paint all squares, header and user message to right color */
@@ -83,6 +85,7 @@ function ifWin() {
 	mode.style.color = rightColorString;
 	newGame.style.color = rightColorString;
 	newGame.textContent = 'Play Again?';
+	win = true;
 
 	header.style.backgroundColor = rightColorString;
 	
@@ -146,7 +149,13 @@ function restart() {
 
 	/* set eventListener only for one square with right color */
 	sqrList[randomSquareNum].addEventListener('click', ifWin);
-	// console.log(sqrList[randomSquareNum])
+
+	/* reset total score if user pushed new colors before he won */
+	if(win === false) {
+		score = 0;
+		youScoreNum.textContent = score;
+	}
+	win = false;
 };
 
 newGame.addEventListener('click', restart)
