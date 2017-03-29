@@ -30,11 +30,15 @@ mode.addEventListener('click', function() {
 		mode.textContent = 'easy';
 		secondSqrRow.style.display = 'none';
 		hardMode = false;
+		score = 0;
+		youScoreNum.textContent = score;
 		restart();
 	} else {
 		mode.textContent = 'hard';
 		secondSqrRow.style.removeProperty('display');
 		hardMode = true;
+		score = 0;
+		youScoreNum.textContent = score;
 		restart();
 	}
 });
@@ -67,7 +71,6 @@ function ifLoose(){
 	userMessage.style.display = 'block';
 	/* this is sqrList[i]; make  square which was clicked to disappear */
 	this.style.backgroundColor = 'transparent';
-
 	score -= 2;
 	youScoreNum.textContent = score;
 }
@@ -127,9 +130,10 @@ function restart() {
 
 	paintSquares(sqrList, randomSquareNum, rightColorString);
 	
-	/* reset eventListener with ifWin function from all squares */
+	/* reset eventListeners with ifWin & ifLoose function from all squares */
 	for(var i = 0; i < sqrList.length; i++) {
 		sqrList[i].removeEventListener('click', ifWin);
+		sqrList[i].removeEventListener('click', ifLoose);
 	}
 
 	/* set eventListener to show userMessage 'try again' if user makes mistake' */
