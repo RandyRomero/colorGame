@@ -103,7 +103,7 @@ nav button:focus {
 	flex-flow: column nowrap;
 	justify-content: center;
 	text-align: center;
-	height: 5rem;
+	height: 6rem;
 }
 
 #userMessage p {
@@ -131,9 +131,13 @@ main .container {
 	border-radius: 10%;
 	flex-shrink: 0; /* because it's 1 by default */
 	height: 11rem;
-	margin: 0.9rem;
+	margin: 0 0.9rem 0.9rem 0.9rem;
 	transition: background-color .7s;
 	width: 11rem;
+}
+
+main .container:nth-of-type(2) .square {
+	margin-top: 0.9rem;
 }
 
 /**************************** MEDIA QUERIES *****************************/
@@ -171,7 +175,7 @@ main .container {
 		padding: 0.8rem 0;
 	}
 
-	#userMessage { height: 6rem; }
+	#userMessage { height: 8rem; }
 
 	#userMessage p { font-size: 2.5rem; }
 

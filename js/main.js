@@ -6,7 +6,7 @@ var secondSqrRow = document.querySelector('main .container:nth-of-type(2)');
 var hardMode = true;
 
 /* hite user message before it is needed */
-userMessage.style.display = 'none'; 
+// userMessage.style.display = 'none'; 
 
 /* define variables for rgb numbers in header */
 var rgbNumHeader = [];
@@ -89,7 +89,8 @@ function ifWin() {
 
 /* set new colors for squares */
 function restart() {
-	userMessage.style.display = 'none'; /* make it vanish */ 
+	userMessage.textContent = 'Give it a shot!'; 
+	userMessage.style.color = 'rgb(255, 165, 0)';
 	header.style.removeProperty('background-color');
 	mode.style.removeProperty('color');
 	newGame.style.removeProperty('color');
