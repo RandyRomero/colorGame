@@ -1,6 +1,4 @@
-html {
-	font-size: 16px;
-}
+html { font-size: 16px; }
 
 html, body {
 	margin: 0;
@@ -8,9 +6,7 @@ html, body {
 	height: 100%;
 }
 
-body {
-	background-color: black;
-}
+body { background-color: black; }
 
 .clearfix:after {
 	content: "";
@@ -18,10 +14,7 @@ body {
 	clear: both;
 }
 
-.container {
-	margin: 0 auto;
-	width: 672px; /* as long as h1 heading */
-}
+.container { margin: 0 auto; }
 
 /******************************** HEADER *********************************/
 
@@ -60,13 +53,9 @@ h2 {
 	text-transform: uppercase;
 }
 
-h1 {
-	font-size: 5rem;
-}
+h1 { font-size: 5rem; }
 
-h2 {
-	font-size: 2rem;
-}
+h2 { font-size: 2rem; }
 
 /*h2:first-of-type { padding-top: 1.5%; }*/
 
@@ -77,9 +66,7 @@ nav {
 	text-align: center;
 }
 
-nav .container {
-	width: 38rem;
-}
+nav .container { width: 38rem; }
 
 nav button {
 	background-color: white;
@@ -130,9 +117,7 @@ nav button:focus {
 
 /******************************** MAIN *********************************/
 
-main .container:first-of-type {
-	text-align: center;
-}
+main .container:first-of-type { text-align: center; }
 
 main .container {
 	display: flex;
@@ -186,13 +171,9 @@ main .container {
 		padding: 0.8rem 0;
 	}
 
-	#userMessage {
-		height: 6rem;
-	}
+	#userMessage { height: 6rem; }
 
-	#userMessage p {
-		font-size: 2.5rem;
-	}
+	#userMessage p { font-size: 2.5rem; }
 
 	.square {
 		/* magnify squares for mobile-portrait */
@@ -206,52 +187,20 @@ main .container {
 
 @media(max-height: 730px) and (orientation: landscape) {
 	html { font-size: 13px; }
-	
-	/*.container { width: 60%; }*/
-
-	/*main .container { justify-content: space-between; }*/
 }
 
 @media(max-height: 600px) and (orientation: landscape) {
 	html { font-size: 10px; }
-	/*.container { width: 60%; }*/
 }
 
 @media(max-height: 470px) and (orientation: landscape) {
 	html { font-size: 8px; }
-
-	/*.container { width: 44%; }*/
 }
 
 @media(max-height: 370px) and (orientation: landscape) {
 	html { font-size: 6px; }
-
-	/*.container { width: 32%; }*/
 }
 
-/*@media(orientation: portrait) {
-	nav .container { width: 100%; }
 
-	#btn-1,
-	#btn-2,
-	#btn-3 {
-		display: block;
-		float: none;
-		padding: 1rem 0;
-		margin: 0 auto;
-		width: 100%;
-		white-space: nowrap;
-	}
-}*/
-
-/*@media(orientation: portrait) {
-	main .container {
-		width: 90%;
-	}
-} */
-
-/*@media(max-width: 310px) {
-	html {font-size: 5px;}
-}*/
 
 /* very lovely red rgb(234, 52, 18); */
