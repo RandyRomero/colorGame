@@ -133,7 +133,7 @@ main .container:first-of-type {
 main .container {
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: space-around;
+	justify-content: center;
 }
 
 main .container:first-of-type {
@@ -210,7 +210,7 @@ main .container:nth-of-type(2) {
 	
 	.container { width: 60%; }
 
-	main .container { justify-content: space-between; }
+	/*main .container { justify-content: space-between; }*/
 }
 
 @media(max-height: 600px) and (orientation: landscape) {
