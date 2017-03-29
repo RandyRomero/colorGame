@@ -5,6 +5,8 @@ var mode = document.querySelector('#btn-2'); /* easy or hard more */
 var secondSqrRow = document.querySelector('main .container:nth-of-type(2)');
 var hardMode = true;
 
+/* hite user message before it is needed */
+userMessage.style.display = 'none'; 
 
 /* define variables for rgb numbers in header */
 var rgbNumHeader = [];
@@ -108,7 +110,6 @@ function restart() {
 	} else {
 		/* is it is easy mode right square should be among first three of them */
 		randomSquareNum = Math.floor(Math.random() * 3);
-		
 	}
 	
 	// console.log(randomSquareNum)
