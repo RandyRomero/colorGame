@@ -71,8 +71,8 @@ function ifLoose(){
 
 /* paint all squares, header and user message to right color */
 function ifWin() {
-	userMessage.style.display = 'block'; /* make it visible */
 	userMessage.style.color = rightColorString;
+	youScoreString.style.color = rightColorString;
 	userMessage.textContent = 'Correct!';
 	mode.style.color = rightColorString;
 	newGame.style.color = rightColorString;
@@ -94,6 +94,7 @@ function ifWin() {
 function restart() {
 	userMessage.textContent = 'Give it a shot!'; 
 	userMessage.style.color = 'rgb(255, 165, 0)';
+	youScoreString.style.color = 'rgb(255, 165, 0)';
 	header.style.removeProperty('background-color');
 	mode.style.removeProperty('color');
 	newGame.style.removeProperty('color');
