@@ -45,10 +45,15 @@ mode.addEventListener('click', function() {
 	}
 });
 
-/* get sound for nav buttons */
+/* to play specific sound if user chose wrong square */
+function playLostSound() {
+	document.querySelector('#lostSound').play();
+}
+
+/* play sound for nav buttons */
 for (i = 0; i < navButtons.length; i++) {
 	navButtons[i].addEventListener('click', function() {
-		document.querySelector('#sand').play();
+		document.querySelector('#sandSound').play();
 	});
 }
 
@@ -78,7 +83,7 @@ function ifLoose(){
 	userMessage.style.removeProperty('color');
 	userMessage.textContent = 'Try Again';
 	userMessage.style.display = 'block';
-	/* this is sqrList[i]; make  square which was clicked to disappear */
+	/* 'this' is sqrList[i]; make  square which was clicked to disappear */
 	this.style.backgroundColor = 'transparent';
 	score -= 2;
 	youScoreNum.textContent = score;
@@ -145,6 +150,7 @@ function restart() {
 	for(var i = 0; i < sqrList.length; i++) {
 		sqrList[i].removeEventListener('click', ifWin);
 		sqrList[i].removeEventListener('click', ifLoose);
+		sqrList[i].removeEventListener('click', playLostSound);
 	}
 
 	/* set eventListener to show userMessage 'try again' if user makes mistake' */
@@ -153,6 +159,7 @@ function restart() {
 			continue
 		}
 		sqrList[i].addEventListener('click', ifLoose)
+		sqrList[i].addEventListener('click', playLostSound)
 	}
 
 	/* set eventListener only for one square with right color */
