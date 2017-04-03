@@ -45,7 +45,12 @@ mode.addEventListener('click', function() {
 	}
 });
 
-/* to play specific sound if user chose wrong square */
+/* to play specific sound when user chooses right square */
+function playWinSound() {
+	document.querySelector('#winSound').play();
+}
+
+/* to play specific sound when user chooses wrong square */
 function playLostSound() {
 	document.querySelector('#lostSound').play();
 }
@@ -106,10 +111,13 @@ function ifWin() {
 		sqrList[i].style.backgroundColor = rightColorString;
 	};
 
-	/* stop show 'try again' when user has already given the right answer */
+	/* stop show 'try again' and play lostSound when user has already given the right answer */
 	for(var i = 0; i < sqrList.length; i++) {
 		sqrList[i].removeEventListener('click', ifLoose);
+		sqrList[i].removeEventListener('click', playLostSound);
+
 	}
+
 	/* add score */
 	score += 6;
 	youScoreNum.textContent = score;
@@ -151,19 +159,21 @@ function restart() {
 		sqrList[i].removeEventListener('click', ifWin);
 		sqrList[i].removeEventListener('click', ifLoose);
 		sqrList[i].removeEventListener('click', playLostSound);
+		sqrList[i].removeEventListener('click', playWinSound);
 	}
 
-	/* set eventListener to show userMessage 'try again' if user makes mistake' */
+	/* set eventListener to show userMessage 'try again' and play lostSound when user makes mistake' */
 	for(var i = 0; i < sqrList.length; i++) {
 		if(i === randomSquareNum) {
 			continue
 		}
-		sqrList[i].addEventListener('click', ifLoose)
-		sqrList[i].addEventListener('click', playLostSound)
+		sqrList[i].addEventListener('click', ifLoose);
+		sqrList[i].addEventListener('click', playLostSound);
 	}
 
 	/* set eventListener only for one square with right color */
 	sqrList[randomSquareNum].addEventListener('click', ifWin);
+	sqrList[randomSquareNum].addEventListener('click', playWinSound);
 
 	/* reset total score if user pushed new colors before he won */
 	if(win === false) {
