@@ -7,7 +7,8 @@ var hardMode = true;
 var youScoreString = document.querySelector('#userMessage p:nth-of-type(2)')
 var youScoreNum = document.querySelector('#userMessage p span')
 var score = 0;
-var win = false; /* it is needed to check whether user guessed or not previous colors. if not - set score to zero */ 
+var win = false; /* it is needed to check whether user guessed or not previous colors. if not - set score to zero */
+var navButtons = document.querySelectorAll('nav button') /* to play sound on click */
 
 /* hite user message before it is needed */
 // userMessage.style.display = 'none'; 
@@ -43,6 +44,13 @@ mode.addEventListener('click', function() {
 		restart();
 	}
 });
+
+/* get sound for nav buttons */
+for (i = 0; i < navButtons.length; i++) {
+	navButtons[i].addEventListener('click', function() {
+		document.querySelector('#sand').play();
+	});
+}
 
 /* get three random number from 0 to 255 */
 function getRandomColor() {
