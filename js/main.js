@@ -84,6 +84,16 @@ function paintSquares(sqrList, randomSquareNum, rightColor) {
 	sqrList[randomSquareNum].style.backgroundColor = rightColorString;
 }
 
+function stopGame() {
+	/* reset all addEventListeners from squares */
+	for(var i = 0; i < sqrList.length; i++) {
+		sqrList[i].removeEventListener('click', ifWin);
+		sqrList[i].removeEventListener('click', ifLoose);
+		sqrList[i].removeEventListener('click', playLostSound);
+		sqrList[i].removeEventListener('click', playWinSound);
+	}
+}
+
 function ifLoose(){
 	userMessage.style.removeProperty('color');
 	userMessage.textContent = 'Try Again';
@@ -111,12 +121,7 @@ function ifWin() {
 		sqrList[i].style.backgroundColor = rightColorString;
 	};
 
-	/* stop show 'try again' and play lostSound when user has already given the right answer */
-	for(var i = 0; i < sqrList.length; i++) {
-		sqrList[i].removeEventListener('click', ifLoose);
-		sqrList[i].removeEventListener('click', playLostSound);
-
-	}
+	stopGame();
 
 	/* add score */
 	score += 6;
@@ -153,14 +158,7 @@ function restart() {
 	// console.log(randomSquareNum)
 
 	paintSquares(sqrList, randomSquareNum, rightColorString);
-	
-	/* reset eventListeners with ifWin & ifLoose function from all squares */
-	for(var i = 0; i < sqrList.length; i++) {
-		sqrList[i].removeEventListener('click', ifWin);
-		sqrList[i].removeEventListener('click', ifLoose);
-		sqrList[i].removeEventListener('click', playLostSound);
-		sqrList[i].removeEventListener('click', playWinSound);
-	}
+	stopGame();
 
 	/* set eventListener to show userMessage 'try again' and play lostSound when user makes mistake' */
 	for(var i = 0; i < sqrList.length; i++) {
@@ -172,8 +170,9 @@ function restart() {
 	}
 
 	/* set eventListener only for one square with right color */
-	sqrList[randomSquareNum].addEventListener('click', ifWin);
 	sqrList[randomSquareNum].addEventListener('click', playWinSound);
+	sqrList[randomSquareNum].addEventListener('click', ifWin);
+	
 
 	/* reset total score if user pushed new colors before he won */
 	if(win === false) {
