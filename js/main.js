@@ -1,14 +1,15 @@
-var userMessage = document.querySelector('#userMessage p:first-of-type')
+var userMessage = document.querySelector('.userMessage p:first-of-type')
 var header = document.querySelector('header'); /* header */
 var newGame = document.querySelector('#btn-1'); /* new colors */
 var mode = document.querySelector('#btn-2'); /* easy or hard more */
 var secondSqrRow = document.querySelector('main .container:nth-of-type(2)');
 var hardMode = true;
-var youScoreString = document.querySelector('#userMessage p:nth-of-type(2)')
-var youScoreNum = document.querySelector('#userMessage p span')
+var youScoreString = document.querySelector('.userMessage p:nth-of-type(2)')
+var youScoreNum = document.querySelector('.userMessage p span')
 var score = 0;
 var win = false; /* it is needed to check whether user guessed or not previous colors. if not - set score to zero */
 var navButtons = document.querySelectorAll('nav button') /* to play sound on click */
+var howTo = document.querySelector('.userMessage:nth-of-type(2) p')
 
 /* hite user message before it is needed */
 // userMessage.style.display = 'none'; 
@@ -45,6 +46,11 @@ mode.addEventListener('click', function() {
 	}
 });
 
+/* show alert that explains to user how to play */
+howTo.addEventListener('click', function() {
+	alert('The RGB color model is an additive color model in which RED, GREEN and BLUE light are added together in various ways to reproduce a broad array of colors. There is random color in header of this page which you need to guess and choose among all squares. Only one of them represents color which is in the header.')
+});
+
 /* to play specific sound when user chooses right square */
 function playWinSound() {
 	document.querySelector('#winSound').play();
@@ -69,7 +75,7 @@ function getRandomColor() {
 		rgbNums[i] = Math.floor(Math.random() * 256);
 		// console.log(rgbNums[i])
 	};
-	var randomColor = [rgbNums[0], rgbNums[1], rgbNums[2]]
+	var randomColor = [rgbNums[0], rgbNums[1], rgbNums[2]];
 	return randomColor
 }
 
@@ -109,6 +115,7 @@ function ifLoose(){
 function ifWin() {
 	userMessage.style.color = rightColorString;
 	youScoreString.style.color = rightColorString;
+	howTo.style.color = rightColorString;
 	userMessage.textContent = 'Correct!';
 	mode.style.color = rightColorString;
 	newGame.style.color = rightColorString;
@@ -136,6 +143,7 @@ function restart() {
 	header.style.removeProperty('background-color');
 	mode.style.removeProperty('color');
 	newGame.style.removeProperty('color');
+	howTo.style.removeProperty('color');
 	newGame.textContent = 'New Colors';
 
 	rightColor = getRandomColor();

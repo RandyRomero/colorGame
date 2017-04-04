@@ -98,7 +98,7 @@ nav button:focus {
 
 /*************************** USER MESSAGE *******************************/
 
-#userMessage {
+.userMessage {
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
@@ -106,13 +106,22 @@ nav button:focus {
 	height: 6rem;
 }
 
-#userMessage p {
+.userMessage p {
 	color: orange;
 	font-size: 1.5rem;
 	font-weight: 900;
 	margin-bottom: 0.1rem;
 	margin-top: 0.1rem;
 	text-transform: uppercase;
+}
+
+.userMessage:nth-of-type(2) {
+	height: 3rem;
+}
+
+.userMessage:nth-of-type(2) p {
+	font-size: 1rem;
+	font-weight: 500;
 }
 
 /******************************** MAIN *********************************/
@@ -175,9 +184,11 @@ main .container:nth-of-type(2) .square {
 		padding: 0.8rem 0;
 	}
 
-	#userMessage { height: 8rem; }
+	.userMessage { height: 8rem; }
 
-	#userMessage p { font-size: 2.5rem; }
+	.userMessage p { font-size: 2.5rem; }
+
+	.userMessage:nth-of-type(2) p { font-size: 1.5rem; }
 
 	.square {
 		/* magnify squares for mobile-portrait */
