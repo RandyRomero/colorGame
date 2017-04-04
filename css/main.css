@@ -51,7 +51,20 @@ h2 {
 	color: white;
 	margin: 0;
 	text-transform: uppercase;
+	
 }
+
+/* otherwise transition on h1 span doesn't work */
+header h1 span {
+	color: white;
+	-webkit-transition: color .7s;
+	transition: color 1s;
+
+}
+ /* to give user a little hint about color */
+header h1 span:first-of-type:hover { color: red; }
+header h1 span:nth-of-type(2):hover { color: green; }
+header h1 span:nth-of-type(3):hover { color: blue; }
 
 h1 { font-size: 5rem; }
 
@@ -116,18 +129,14 @@ nav button:focus {
 	text-transform: uppercase;
 }
 
-.userMessage:nth-of-type(2) {
-	height: 3rem;
-}
+.userMessage:nth-of-type(2) { height: 3rem; }
 
 .userMessage:nth-of-type(2) p {
 	font-size: 1rem;
 	font-weight: 500;
 }
 
-.userMessage:nth-of-type(2) p:hover {
-	cursor: help;
-}
+.userMessage:nth-of-type(2) p:hover { cursor: help; }
 
 /******************************** MAIN *********************************/
 
@@ -154,9 +163,7 @@ main .container {
 	cursor: pointer;
 }*/
 
-main .container:nth-of-type(2) .square {
-	margin-top: 0.9rem;
-}
+main .container:nth-of-type(2) .square { margin-top: 0.9rem; }
 
 /**************************** MEDIA QUERIES *****************************/
 @media(max-width: 765px) {
