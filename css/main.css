@@ -124,6 +124,10 @@ nav button:focus {
 	font-weight: 500;
 }
 
+.userMessage:nth-of-type(2) p:hover {
+	cursor: help;
+}
+
 /******************************** MAIN *********************************/
 
 main .container:first-of-type { text-align: center; }
@@ -144,6 +148,10 @@ main .container {
 	transition: background-color .7s;
 	width: 11rem;
 }
+
+/*.square:hover {
+	cursor: pointer;
+}*/
 
 main .container:nth-of-type(2) .square {
 	margin-top: 0.9rem;
