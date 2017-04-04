@@ -51,6 +51,10 @@ howTo.addEventListener('click', function() {
 	alert('The RGB color model is an additive color model in which RED, GREEN and BLUE light are added together in various ways to reproduce a broad array of colors. There is random color in header of this page which you need to guess and choose among all squares. Only one of them represents color which is in the header.')
 });
 
+function setPointer() {
+	this.style.cursor = 'pointer';
+}
+
 /* to play specific sound when user chooses right square */
 function playWinSound() {
 	document.querySelector('#winSound').play();
@@ -97,6 +101,8 @@ function stopGame() {
 		sqrList[i].removeEventListener('click', ifLoose);
 		sqrList[i].removeEventListener('click', playLostSound);
 		sqrList[i].removeEventListener('click', playWinSound);
+		sqrList[i].removeEventListener('mouseenter', setPointer);
+		sqrList[i].style.removeProperty('cursor');
 	}
 }
 
@@ -104,8 +110,11 @@ function ifLoose(){
 	userMessage.style.removeProperty('color');
 	userMessage.textContent = 'Try Again';
 	userMessage.style.display = 'block';
-	/* 'this' is sqrList[i]; make  square which was clicked to disappear */
+	/* 'this' is refers to sqrList[i] */
+	this.removeEventListener('mouseenter', setPointer);
+	this.style.removeProperty('cursor');
 	this.style.backgroundColor = 'transparent';
+	this.removeEventListener('click', ifLoose);
 	score -= 2;
 	youScoreNum.textContent = score;
 	win = false;
@@ -167,6 +176,11 @@ function restart() {
 
 	paintSquares(sqrList, randomSquareNum, rightColorString);
 	stopGame();
+
+	/* set cursor to pointer when cursor above squares */
+	for(var i = 0; i < sqrList.length; i++){
+		sqrList[i].addEventListener('mouseenter', setPointer)
+	}
 
 	/* set eventListener to show userMessage 'try again' and play lostSound when user makes mistake' */
 	for(var i = 0; i < sqrList.length; i++) {
