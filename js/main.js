@@ -63,6 +63,8 @@ function playWinSound() {
 /* to play specific sound when user chooses wrong square */
 function playLostSound() {
 	document.querySelector('#lostSound').play();
+	this.removeEventListener('click', playLostSound);
+	/* remove it right after one play */
 }
 
 /* play sound for nav buttons */
@@ -115,6 +117,7 @@ function ifLoose(){
 	this.style.removeProperty('cursor');
 	this.style.backgroundColor = 'transparent';
 	this.removeEventListener('click', ifLoose);
+	
 	score -= 2;
 	youScoreNum.textContent = score;
 	win = false;
@@ -130,7 +133,6 @@ function ifWin() {
 	newGame.style.color = rightColorString;
 	newGame.textContent = 'Play Again?';
 	win = true;
-
 	header.style.backgroundColor = rightColorString;
 	
 	for(var i = 0; i < sqrList.length; i++) {
