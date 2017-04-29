@@ -178,6 +178,7 @@ function restart() {
 	/* set eventListener to show userMessage 'try again' and play lostSound when user makes mistake' */
 	for(var i = 0; i < sqrList.length; i++) {
 		if(i === randomSquareNum) {
+			/* skip right square */
 			continue
 		}
 		sqrList[i].addEventListener('click', ifLoose);
