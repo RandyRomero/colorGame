@@ -25,13 +25,13 @@ for(var i = 0; i <= 5; i++) {
 	sqrList[i] = document.querySelector('#sqr-' + (i + 1));
 }
 
-function resetScore() {
+function resetScore() { /* reset score when user changes mode */
 	score = 0;
 	youScoreNum.textContent = score;
 	restart();
 }
 
-/* change 'easy' button to 'hard' and back */
+/* change 'easy' mode to 'hard' and back */
 mode.addEventListener('click', function() {
 	if(hardMode === true) {
 		mode.textContent = 'easy';
@@ -63,8 +63,8 @@ function playWinSound() {
 /* to play specific sound when user chooses wrong square */
 function playLostSound() {
 	document.querySelector('#lostSound').play();
+	/* remove it right after first play */
 	this.removeEventListener('click', playLostSound);
-	/* remove it right after one play */
 }
 
 /* play sound for nav buttons */
@@ -74,7 +74,7 @@ for (i = 0; i < navButtons.length; i++) {
 	});
 }
 
-/* get three random number from 0 to 255 */
+/* get three random numbers from 0 to 255 */
 function getRandomColor() {
 	var rgbNums = [];
 	for(var i = 0; i <= 2; i++) {
@@ -85,7 +85,7 @@ function getRandomColor() {
 	return randomColor
 }
 
-/* paints all squares in different colors */
+/* paint all squares in different colors */
 function paintSquares(sqrList, randomSquareNum, rightColor) {
 	for(var i = 0; i < sqrList.length; i++) {
 		randomColor = getRandomColor();
@@ -179,7 +179,7 @@ function restart() {
 	paintSquares(sqrList, randomSquareNum, rightColorString);
 	stopGame();
 
-	/* set cursor to pointer when cursor above squares */
+	/* set cursor to pointer when it is above squares */
 	for(var i = 0; i < sqrList.length; i++){
 		sqrList[i].addEventListener('mouseenter', setPointer)
 	}
