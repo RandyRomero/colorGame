@@ -11,8 +11,6 @@ var win = false; /* it is needed to check whether user guessed or not previous c
 var navButtons = document.querySelectorAll('nav button') /* to play sound on click */
 var howTo = document.querySelector('.userMessage:nth-of-type(2) p')
 
-/* hite user message before it is needed */
-// userMessage.style.display = 'none'; 
 
 /* define variables for rgb numbers in header */
 var rgbNumHeader = [];
@@ -27,22 +25,24 @@ for(var i = 0; i <= 5; i++) {
 	sqrList[i] = document.querySelector('#sqr-' + (i + 1));
 }
 
+function resetScore() {
+	score = 0;
+	youScoreNum.textContent = score;
+	restart();
+}
+
 /* change 'easy' button to 'hard' and back */
 mode.addEventListener('click', function() {
 	if(hardMode === true) {
 		mode.textContent = 'easy';
 		secondSqrRow.style.display = 'none';
 		hardMode = false;
-		score = 0;
-		youScoreNum.textContent = score;
-		restart();
+		resetScore();
 	} else {
 		mode.textContent = 'hard';
 		secondSqrRow.style.removeProperty('display');
 		hardMode = true;
-		score = 0;
-		youScoreNum.textContent = score;
-		restart();
+		resetScore();
 	}
 });
 
