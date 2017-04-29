@@ -84,7 +84,7 @@ function getRandomColor() {
 }
 
 /* paint all squares in different colors */
-function paintSquares(sqrList, randomSquareNum, rightColor) {
+function paintSquares(randomSquareNum) {
 	for(var i = 0; i < sqrList.length; i++) {
 		var randomColor = getRandomColor();
 		var stringColor = 'rgb(' + randomColor[0] + ', ' + randomColor[1] + ', ' + randomColor[2] + ')'
@@ -108,13 +108,11 @@ function stopGame() {
 function ifLoose(){
 	userMessage.style.removeProperty('color');
 	userMessage.textContent = 'Try Again';
-	userMessage.style.display = 'block';
 	/* 'this' is refers to sqrList[i] */
 	this.removeEventListener('mouseenter', setPointer);
 	this.style.removeProperty('cursor');
 	this.style.backgroundColor = 'transparent';
 	this.removeEventListener('click', ifLoose);
-	
 	score -= 2;
 	youScoreNum.textContent = score;
 	win = false;
@@ -154,9 +152,8 @@ function restart() {
 	howTo.style.removeProperty('color');
 	newGame.textContent = 'New Colors';
 
-	rightColor = getRandomColor();
+	var rightColor = getRandomColor();
 	rightColorString = 'rgb(' + rightColor[0] + ', ' + rightColor[1] + ', ' + rightColor[2] + ')';
-	// console.log(rightColorString)
 
 	/* put rbg notation of rgb color in header */
 	for(var i = 1; i <= 3; i++) { 
@@ -164,13 +161,13 @@ function restart() {
 	};
 
 	if(hardMode === true){
-		randomSquareNum = Math.floor(Math.random() * 6);
+		var randomSquareNum = Math.floor(Math.random() * 6);
 	} else {
-		/* is it is easy mode right square should be among first three of them */
-		randomSquareNum = Math.floor(Math.random() * 3);
+		/* if it is easy mode right square should be among first three of them */
+		var randomSquareNum = Math.floor(Math.random() * 3);
 	}
 
-	paintSquares(sqrList, randomSquareNum, rightColorString);
+	paintSquares(randomSquareNum);
 	stopGame();
 
 	/* set cursor to pointer when it is above squares */
