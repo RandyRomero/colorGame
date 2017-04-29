@@ -86,11 +86,10 @@ function getRandomColor() {
 /* paint all squares in different colors */
 function paintSquares(sqrList, randomSquareNum, rightColor) {
 	for(var i = 0; i < sqrList.length; i++) {
-		randomColor = getRandomColor();
-		stringColor = 'rgb(' + randomColor[0] + ', ' + randomColor[1] + ', ' + randomColor[2] + ')'
+		var randomColor = getRandomColor();
+		var stringColor = 'rgb(' + randomColor[0] + ', ' + randomColor[1] + ', ' + randomColor[2] + ')'
 		sqrList[i].style.backgroundColor = stringColor;
 	}
-	// console.log(rightColorString)
 	sqrList[randomSquareNum].style.backgroundColor = rightColorString;
 }
 
@@ -166,13 +165,10 @@ function restart() {
 
 	if(hardMode === true){
 		randomSquareNum = Math.floor(Math.random() * 6);
-		// console.log(randomSquareNum);
 	} else {
 		/* is it is easy mode right square should be among first three of them */
 		randomSquareNum = Math.floor(Math.random() * 3);
 	}
-	
-	// console.log(randomSquareNum)
 
 	paintSquares(sqrList, randomSquareNum, rightColorString);
 	stopGame();
