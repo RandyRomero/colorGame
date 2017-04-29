@@ -76,12 +76,10 @@ for (i = 0; i < navButtons.length; i++) {
 
 /* get three random numbers from 0 to 255 */
 function getRandomColor() {
-	var rgbNums = [];
+	var randomColor = [];
 	for(var i = 0; i <= 2; i++) {
-		rgbNums[i] = Math.floor(Math.random() * 256);
-		// console.log(rgbNums[i])
+		randomColor.push(Math.floor(Math.random() * 256));
 	};
-	var randomColor = [rgbNums[0], rgbNums[1], rgbNums[2]];
 	return randomColor
 }
 
