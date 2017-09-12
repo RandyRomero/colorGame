@@ -1,27 +1,28 @@
-var userMessage = document.querySelector('.userMessage p:first-of-type')
+var userMessage = document.querySelector('.userMessage p:first-of-type');
 var header = document.querySelector('header'); /* header */
 var newGame = document.querySelector('#btn-1'); /* new colors */
 var mode = document.querySelector('#btn-2'); /* easy or hard more */
 var secondSqrRow = document.querySelector('main .container:nth-of-type(2)');
 var hardMode = true;
-var youScoreString = document.querySelector('.userMessage p:nth-of-type(2)')
-var youScoreNum = document.querySelector('.userMessage p span')
+var youScoreString = document.querySelector('.userMessage p:nth-of-type(2)');
+var youScoreNum = document.querySelector('.userMessage p span');
 var score = 0;
 var win = false; /* it is needed to check whether user guessed or not previous colors. if not - set score to zero */
-var navButtons = document.querySelectorAll('nav button') /* to play sound on click */
-var howTo = document.querySelector('.userMessage:nth-of-type(2) p')
+var navButtons = document.querySelectorAll('nav button'); /* to play sound on click */
+var howTo = document.querySelector('.userMessage:nth-of-type(2) p');
+var i;
 
 
 /* define variables for rgb numbers in header */
 var rgbNumHeader = [];
-for(var i = 1; i <= 3; i++) {
+for(i = 1; i <= 3; i++) {
 	rgbNumHeader[i] = document.querySelector('header h1 span:nth-of-type(' + 
 		i + ')');
 }
 
 /* define variables for squares */
 var sqrList =[];
-for(var i = 0; i <= 5; i++) {
+for(i = 0; i <= 5; i++) {
 	sqrList[i] = document.querySelector('#sqr-' + (i + 1));
 }
 
@@ -77,25 +78,25 @@ for (i = 0; i < navButtons.length; i++) {
 /* get three random numbers from 0 to 255 */
 function getRandomColor() {
 	var randomColor = [];
-	for(var i = 0; i <= 2; i++) {
+	for(i = 0; i <= 2; i++) {
 		randomColor.push(Math.floor(Math.random() * 256));
-	};
+	}
 	return randomColor
 }
 
 /* paint all squares in different colors */
 function paintSquares(randomSquareNum) {
-	for(var i = 0; i < sqrList.length; i++) {
+	for(i = 0; i < sqrList.length; i++) {
 		var randomColor = getRandomColor();
-		var stringColor = 'rgb(' + randomColor[0] + ', ' + randomColor[1] + ', ' + randomColor[2] + ')'
-		sqrList[i].style.backgroundColor = stringColor;
+		sqrList[i].style.backgroundColor = 'rgb(' + randomColor[0] + ', ' + randomColor[1] + ', ' +
+			randomColor[2] + ')';
 	}
 	sqrList[randomSquareNum].style.backgroundColor = rightColorString;
 }
 
 function stopGame() {
 	/* reset all addEventListeners from squares */
-	for(var i = 0; i < sqrList.length; i++) {
+	for(i = 0; i < sqrList.length; i++) {
 		sqrList[i].removeEventListener('click', ifWin);
 		sqrList[i].removeEventListener('click', ifLoose);
 		sqrList[i].removeEventListener('click', playLostSound);
@@ -130,9 +131,10 @@ function ifWin() {
 	win = true;
 	header.style.backgroundColor = rightColorString;
 	
-	for(var i = 0; i < sqrList.length; i++) {
+	/* paint every square in right color */
+	for(i = 0; i < sqrList.length; i++) {
 		sqrList[i].style.backgroundColor = rightColorString;
-	};
+	}
 
 	stopGame();
 
@@ -151,32 +153,34 @@ function restart() {
 	newGame.style.removeProperty('color');
 	howTo.style.removeProperty('color');
 	newGame.textContent = 'New Colors';
+	var randomSquareNum;
 
 	var rightColor = getRandomColor();
+	/* declare global variable so that other functions can use it */
 	rightColorString = 'rgb(' + rightColor[0] + ', ' + rightColor[1] + ', ' + rightColor[2] + ')';
 
 	/* put rbg notation of rgb color in header */
-	for(var i = 1; i <= 3; i++) { 
+	for(i = 1; i <= 3; i++) {
 		rgbNumHeader[i].textContent = rightColor[i - 1];
-	};
+	}
 
 	if(hardMode === true){
-		var randomSquareNum = Math.floor(Math.random() * 6);
+		randomSquareNum = Math.floor(Math.random() * 6);
 	} else {
 		/* if it is easy mode right square should be among first three of them */
-		var randomSquareNum = Math.floor(Math.random() * 3);
+		randomSquareNum = Math.floor(Math.random() * 3);
 	}
 
 	paintSquares(randomSquareNum);
 	stopGame();
 
 	/* set cursor to pointer when it is above squares */
-	for(var i = 0; i < sqrList.length; i++){
+	for(i = 0; i < sqrList.length; i++){
 		sqrList[i].addEventListener('mouseenter', setPointer)
 	}
 
 	/* set eventListener to show userMessage 'try again' and play lostSound when user makes mistake' */
-	for(var i = 0; i < sqrList.length; i++) {
+	for(i = 0; i < sqrList.length; i++) {
 		if(i === randomSquareNum) {
 			/* skip right square */
 			continue
@@ -196,6 +200,7 @@ function restart() {
 		youScoreNum.textContent = score;
 	}
 	win = false;
-};
+}
 
-newGame.addEventListener('click', restart)
+newGame.addEventListener('click', restart);
+
