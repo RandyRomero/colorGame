@@ -12,7 +12,6 @@ var navButtons = document.querySelectorAll('nav button'); /* to play sound on cl
 var howTo = document.querySelector('.userMessage:nth-of-type(2) p');
 var i;
 
-
 /* define variables for rgb numbers in header */
 var rgbNumHeader = [];
 for(i = 1; i <= 3; i++) {
@@ -78,25 +77,25 @@ for (i = 0; i < navButtons.length; i++) {
 /* get three random numbers from 0 to 255 */
 function getRandomColor() {
 	var randomColor = [];
-	for(i = 0; i <= 2; i++) {
+	for(var i = 0; i <= 2; i++) {
 		randomColor.push(Math.floor(Math.random() * 256));
 	}
-	return randomColor
+	return randomColor;
 }
 
 /* paint all squares in different colors */
 function paintSquares(randomSquareNum) {
-	for(i = 0; i < sqrList.length; i++) {
+	for(var i = 0; i < sqrList.length; i++) {
 		var randomColor = getRandomColor();
-		sqrList[i].style.backgroundColor = 'rgb(' + randomColor[0] + ', ' + randomColor[1] + ', ' +
-			randomColor[2] + ')';
+		sqrList[i].style.backgroundColor = 'rgb(' + randomColor[0] + ', ' + randomColor[1] + ', '
+            + randomColor[2] + ')';
 	}
 	sqrList[randomSquareNum].style.backgroundColor = rightColorString;
 }
 
 function stopGame() {
 	/* reset all addEventListeners from squares */
-	for(i = 0; i < sqrList.length; i++) {
+	for(var i = 0; i < sqrList.length; i++) {
 		sqrList[i].removeEventListener('click', ifWin);
 		sqrList[i].removeEventListener('click', ifLoose);
 		sqrList[i].removeEventListener('click', playLostSound);
@@ -131,8 +130,7 @@ function ifWin() {
 	win = true;
 	header.style.backgroundColor = rightColorString;
 	
-	/* paint every square in right color */
-	for(i = 0; i < sqrList.length; i++) {
+	for(var i = 0; i < sqrList.length; i++) {
 		sqrList[i].style.backgroundColor = rightColorString;
 	}
 
@@ -154,9 +152,10 @@ function restart() {
 	howTo.style.removeProperty('color');
 	newGame.textContent = 'New Colors';
 	var randomSquareNum;
+	var i;
 
 	var rightColor = getRandomColor();
-	/* declare global variable so that other functions can use it */
+	/* declare global variable in order to use it in other function */
 	rightColorString = 'rgb(' + rightColor[0] + ', ' + rightColor[1] + ', ' + rightColor[2] + ')';
 
 	/* put rbg notation of rgb color in header */
@@ -203,4 +202,3 @@ function restart() {
 }
 
 newGame.addEventListener('click', restart);
-
